@@ -484,62 +484,63 @@
             </ul>
         </div>
 
-        <!-- スライド3: 主要分析結果 -->
-        <div class="slide">
-            <h2>📈 主要分析結果</h2>
-            
-            <h3>🌟 相関分析結果</h3>
-            <table class="correlation-table">
-                <thead>
-                    <tr>
-                        <th>要因</th>
-                        <th>相関係数</th>
-                        <th>解釈</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>通話数</strong></td>
-                        <td class="positive">+0.71</td>
-                        <td> 最重要要因：通話数の増加が直接的にアカウント獲得に繋がる</td>
-                    </tr>
-                    <tr>
-                        <td><strong>曜日別効果</strong></td>
-                        <td class="neutral">+0.47</td>
-                        <td> 第2重要因子：特定曜日の営業効率が大幅に高い</td>
-                    </tr>
-                    <tr>
-                        <td><strong>CM効果</strong></td>
-                        <td class="neutral">+0.43</td>
-                        <td> 中程度の効果：キャンペーン実施時の獲得数向上</td>
-                    </tr>
-                    <tr>
-                        <td><strong>祝日影響</strong></td>
-                        <td class="negative">-0.40</td>
-                        <td> 強い負の影響：祝日は獲得効率が大幅に低下</td>
-                    </tr>
-                </tbody>
-            </table>
+<!-- スライド3: 主要分析結果 -->
+<div class="slide">
+    <h2>📈 主要分析結果</h2>
+    
+    <h3>🌟 相関分析 & モデル結果</h3>
+    <table class="correlation-table">
+        <thead>
+            <tr>
+                <th>要因</th>
+                <th>相関係数</th>
+                <th>解釈</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>通話数</strong></td>
+                <td class="positive">+0.71</td>
+                <td>最重要要因：通話数の増加が直接的にアカウント獲得に繋がる</td>
+            </tr>
+            <tr>
+                <td><strong>曜日別効果</strong></td>
+                <td class="neutral">+0.47</td>
+                <td>平日の効果が高く、特に火曜〜木曜が有効</td>
+            </tr>
+            <tr>
+                <td><strong>CM効果</strong></td>
+                <td class="neutral">+0.43</td>
+                <td>中程度の効果：特に平日（火〜木）に有効</td>
+            </tr>
+            <tr>
+                <td><strong>祝日影響</strong></td>
+                <td class="negative">-0.40</td>
+                <td>強い負の影響：祝日は獲得効率が大幅に低下</td>
+            </tr>
+            <tr>
+                <td><strong>季節性</strong></td>
+                <td class="neutral">—</td>
+                <td>9〜10月に増加、6〜7月は低迷する傾向</td>
+            </tr>
+        </tbody>
+    </table>
 
-            <div class="insight-box">
-                <h3>🔍 重要インサイト</h3>
-                <h4>曜日による影響が明確で重要</h4>
-                <p>水曜日・金曜日の営業効果が最も高く、週末や祝日の営業効率は著しく低下。曜日別のリソース再配分が急務。</p>
-                
-                <h4>キャンペーン期間の効果は顕著</h4>
-                <p>箱ひげ図から、キャンペーン期間の獲得数中央値は非キャンペーン期間の約2倍。時系列分析でもキャンペーン時期の急増トレンドが確認される。</p>
-            </div>
+    <div class="insight-box">
+        <h3>🔍 重要インサイト</h3>
+        <h4>モデル精度</h4>
+        <p>XGBoost + Optuna最適化により <strong>R²=0.9089</strong> を達成 → 高精度な予測が可能。</p>
 
-            <!-- グラフ表示エリア -->
-            <div class="chart-container">
-                <h4 style="color: #d4619b;">📊 分析結果グラフ</h4>
-                <img src="correlation_matrix.png" alt="相関マトリックス" style="max-width: 50%; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto;">
-                <div class="chart-grid">
-                    <img src="boxplot.png" alt="箱ひげ図" style="max-width: 100%;">
-                    <img src="timeseries.png" alt="時系列グラフ" style="max-width: 100%;">
-                </div>
-            </div>
-        </div>
+        <h4>実務への示唆</h4>
+        <ul>
+            <li>通話数の増加施策が最重要</li>
+            <li>火曜〜木曜の平日に営業を集中すべき</li>
+            <li>祝日はオンライン施策へシフト</li>
+            <li>9〜10月を重点強化期、6〜7月は補完策が必要</li>
+        </ul>
+    </div>
+</div>
+
 
         <!-- スライド4: 営業戦略最適化提案 -->
         <div class="slide">
@@ -588,48 +589,49 @@
         </div>
 
         <!-- スライド5: まとめ -->
-        <div class="slide">
-            <h2>📝 分析のまとめ</h2>
+       <!-- スライド5: まとめ -->
+<div class="slide">
+    <h2>📝 分析のまとめ</h2>
 
-            <div class="highlight-box">
-                <h3>🔍 今回の分析で分かったこと</h3>
-                
-                <h4>1. 通話数が一番重要</h4>
-                <p>通話数とアカウント獲得数の相関が0.71と最も高く、電話をかけることが直接的に成果に繋がる</p>
-                
-                <h4>2. 曜日によって効果が違う</h4>
-                <p>水曜日・金曜日の営業効果が高く、祝日や週末は効率が悪い。営業する日を考える必要がある</p>
-                
-                <h4>3. キャンペーンの効果は確実にある</h4>
-                <p>箱ひげ図と時系列グラフから、キャンペーン期間中の獲得数増加が確認できた</p>
-            </div>
+    <div class="highlight-box">
+        <h3>🔍 今回の分析で分かったこと</h3>
+        
+        <h4>1. 通話数が最重要</h4>
+        <p>通話数は獲得数に最も強く影響し、特徴量重要度でも49%を占めた。</p>
+        
+        <h4>2. 曜日・祝日の影響</h4>
+        <p>火曜〜木曜が最も効果的。祝日や週末は効率が悪いため戦略的調整が必要。</p>
+        
+        <h4>3. 季節性の明確な傾向</h4>
+        <p>9〜10月は獲得数が増加、6〜7月は低迷。季節ごとの施策調整が重要。</p>
+    </div>
 
-            <div class="insight-box">
-                <h3>💭 今回の学び</h3>
-                <p>データ分析をすることで、「なんとなくこうだと思っていた」ことを数値で確認することができた。特に曜日による違いがこれほど明確に出るとは思っていなかった。</p>
-                
-                <p>実際のビジネスでも、勘に頼らずデータを見ることで、より効果的な改善策を考えることができると分かった。</p>
-            </div>
+    <div class="insight-box">
+        <h3>💭 今回の学び</h3>
+        <p>EDAに加え、XGBoost + Optuna最適化による機械学習モデルを構築し、
+           SHAPを使った解釈性分析により「なぜこの予測が出たか」を説明できるようになった。</p>
+        <p>勘ではなくデータに基づく戦略設計の重要性を実感。</p>
+    </div>
 
-            <div class="strategy-section">
-                <h3>🌟 次にやってみたいこと</h3>
-                <ul>
-                    <li>時間帯別の分析も行って、より詳細な傾向を調べたい</li>
-                    <li>季節や月別の影響も分析してみたい</li>
-                    <li>実際にこの提案を試してみて、効果を検証したい</li>
-                </ul>
-            </div>
+    <div class="strategy-section">
+        <h3>🌟 次にやってみたいこと</h3>
+        <ul>
+            <li>時間帯別の分析を追加し、さらに細かい最適化を検討</li>
+            <li>季節・月別トレンドを深掘りし、年間戦略に応用</li>
+            <li>実際の営業現場に提案を導入し、効果検証</li>
+        </ul>
+    </div>
 
-            <div class="final-message">
-                <span class="gradient-text">以上</span>
-                <div style="margin-top: 15px;">
-                    <span class="accent-dot"></span>
-                    <span class="accent-dot"></span>
-                    <span class="accent-dot"></span>
-                </div>
-            </div>
+    <div class="final-message">
+        <span class="gradient-text">以上</span>
+        <div style="margin-top: 15px;">
+            <span class="accent-dot"></span>
+            <span class="accent-dot"></span>
+            <span class="accent-dot"></span>
         </div>
     </div>
+</div>
+
 
     <div class="controls">
         <button class="btn" onclick="previousSlide()">← 前へ</button>
