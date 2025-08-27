@@ -481,14 +481,12 @@
 <!-- スライド3: 主要分析結果 -->
 <div class="slide">
     <h2>📈 主要分析結果</h2>
-    
+
     <h3>🌟 相関分析 & モデル結果</h3>
     <table class="correlation-table">
         <thead>
             <tr>
-                <th>要因</th>
-                <th>相関係数</th>
-                <th>解釈</th>
+                <th>要因</th><th>相関係数</th><th>解釈</th>
             </tr>
         </thead>
         <tbody>
@@ -497,66 +495,39 @@
                 <td class="positive">+0.71</td>
                 <td>最重要要因：通話数の増加が直接的にアカウント獲得に繋がる</td>
             </tr>
-            <tr>
-                <td><strong>曜日別効果</strong></td>
-                <td class="neutral">+0.47</td>
-                <td>平日の効果が高く、特に火曜〜木曜が有効</td>
-            </tr>
-            <tr>
-                <td><strong>CM効果</strong></td>
-                <td class="neutral">+0.43</td>
-                <td>中程度の効果：特に平日（火〜木）に有効</td>
-            </tr>
-            <tr>
-                <td><strong>祝日影響</strong></td>
-                <td class="negative">-0.40</td>
-                <td>強い負の影響：祝日は獲得効率が大幅に低下</td>
-            </tr>
-            <tr>
-                <td><strong>季節性</strong></td>
-                <td class="neutral">—</td>
-                <td>9〜10月に増加、6〜7月は低迷する傾向</td>
-            </tr>
+            ...
         </tbody>
     </table>
 
     <!-- グラフ配置 -->
     <div class="chart-grid">
         <div class="chart-container">
-            <h4 style="color: #d4619b;">📊 曜日別の平均獲得数（キャンペーン有無）</h4>
-            <img src="曜日別の平均獲得数（キャンペーン有無）.png" alt="曜日別の平均獲得数">
+            <h4 style="color: #d4619b;">📊 通話数 vs アカウント獲得数</h4>
+            <img src="通話数 vs アカウント獲得数.png" alt="通話数 vs アカウント獲得数">
         </div>
         <div class="chart-container">
-            <h4 style="color: #d4619b;">📊 箱ひげ図（キャンペーン有無）</h4>
-            <img src="箱ひげ図（キャンペーン有無）.png" alt="キャンペーン有無の箱ひげ図">
+            <h4 style="color: #d4619b;">📊 曜日別の平均獲得数（キャンペーン有無）</h4>
+            <img src="曜日別の平均獲得数（キャンペーン有無）.png" alt="曜日別の平均獲得数">
         </div>
     </div>
 
     <div class="chart-grid">
         <div class="chart-container">
+            <h4 style="color: #d4619b;">📊 箱ひげ図（キャンペーン有無）</h4>
+            <img src="箱ひげ図（キャンペーン有無）.png" alt="キャンペーン有無の箱ひげ図">
+        </div>
+        <div class="chart-container">
             <h4 style="color: #d4619b;">📊 特徴量重要度（目的変数 = 通話数）</h4>
             <img src="特徴量重要度（目的変数 = 通話数）.png" alt="特徴量重要度グラフ">
         </div>
-        <div class="chart-container">
-            <h4 style="color: #d4619b;">📊 時系列トレンドと季節性</h4>
-            <img src="時系列トレンド季節性.png" alt="時系列トレンドと季節性">
-        </div>
     </div>
 
-    <div class="insight-box">
-        <h3>🔍 重要インサイト</h3>
-        <h4>モデル精度</h4>
-        <p>XGBoost + Optuna最適化により <strong>R²=0.9238</strong> を達成 → 高精度な予測が可能。</p>
-
-        <h4>実務への示唆</h4>
-        <ul>
-            <li>通話数の増加施策が最重要</li>
-            <li>火曜〜木曜の平日に営業を集中すべき</li>
-            <li>祝日はオンライン施策へシフト</li>
-            <li>9〜10月を重点強化期、6〜7月は補完策が必要</li>
-        </ul>
+    <div class="chart-container">
+        <h4 style="color: #d4619b;">📊 時系列トレンドと季節性</h4>
+        <img src="時系列トレンド季節性.png" alt="時系列トレンドと季節性">
     </div>
 </div>
+
 
 
 
@@ -578,32 +549,24 @@
             </div>
 
             <div class="strategy-section">
-                <h3>✨ 提案2: 通話数を増やす工夫をする</h3>
-                <p><strong>分析結果から：</strong></p>
-                <ul>
-                    <li>通話数とアカウント獲得数の関係が一番強い（相関0.71）</li>
-                </ul>
-                <p><strong>改善案：</strong></p>
-                <ul>
-                    <li>効果的な曜日（水・金）により多く電話をかける</li>
-                    <li>電話の質を上げる研修を行う</li>
-                </ul>
-            </div>
+    <h3>✨ 提案2: 通話数を増やす工夫をする</h3>
+    <p><strong>分析結果から：</strong></p>
+    <ul>
+        <li>通話数とアカウント獲得数の関係が一番強い（相関0.71）</li>
+    </ul>
+    <p><strong>改善案：</strong></p>
+    <ul>
+        <li>効果的な曜日（水・金）により多く電話をかける</li>
+        <li>電話の質を上げる研修を行う</li>
+    </ul>
 
-            <div class="strategy-section">
-                <h3>✨ 提案3: キャンペーンを活用する</h3>
-                <p><strong>分析結果から：</strong></p>
-                <ul>
-                    <li>キャンペーン期間中の獲得数が明らかに多い</li>
-                    <li>時系列グラフでもキャンペーン時期に急増している</li>
-                </ul>
-                <p><strong>改善案：</strong></p>
-                <ul>
-                    <li>キャンペーン期間と営業活動のタイミングを合わせる</li>
-                    <li>特に効果的な曜日（水・金）にキャンペーンを重ねる</li>
-                </ul>
-            </div>
-        </div>
+    <!-- グラフを横に配置 -->
+    <div class="chart-container">
+        <h4 style="color: #d4619b;">📊 通話数 vs アカウント獲得数</h4>
+        <img src="通話数 vs アカウント獲得数.png" alt="通話数 vs アカウント獲得数" style="max-width:70%;">
+    </div>
+</div>
+
 
         <div class="slide">
     <h2>📝 分析のまとめ</h2>
