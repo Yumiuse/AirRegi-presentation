@@ -1,6 +1,3 @@
-<!-- TEST: 2024-06-20 21:xx by Yumiko -->
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -59,7 +56,7 @@
         }
 
         .slide h2 {
-            font-size: 1.4em;         
+            font-size: 1.4em;          
             margin-bottom: 12px;
             color: #b85c8a;
             border-bottom: 2px solid #f7cac9;
@@ -68,7 +65,7 @@
         }
 
         .slide h3 {
-            font-size: 1.2em;         /* 1em → 1.1em に変更 */
+            font-size: 1.2em;           /* 1em → 1.1em に変更 */
             margin-bottom: 6px;
             color: #8b4a6b;
             display: flex;
@@ -164,13 +161,13 @@
             padding: 10px;
             text-align: left;
             font-weight: 500;
-            font-size: 0.9em;         /* 0.8em → 0.9em に変更 */
+            font-size: 0.9em;           /* 0.8em → 0.9em に変更 */
         }
 
         .correlation-table td {
             padding: 8px 10px;
             border-bottom: 1px solid #f5f5f5;
-            font-size: 0.85em;        /* 0.75em → 0.85em に変更 */
+            font-size: 0.85em;          /* 0.75em → 0.85em に変更 */
             line-height: 1.3;
         }
 
@@ -444,13 +441,11 @@
     </style>
 </head>
 <body>
-    <!-- 以下のHTMLコンテンツは変更なし -->
     <div class="presentation-container">
         <div class="slide-counter">
             <span id="current-slide">1</span> / <span id="total-slides">5</span>
         </div>
 
-        <!-- スライド1: タイトルスライド -->
         <div class="slide active title-slide">
             <h1>AirREGI アカウント獲得最適化提案</h1>
             <div class="subtitle">データ分析による営業効率化の提案</div>
@@ -461,7 +456,6 @@
             <div class="student-name">澤　由美子</div>
         </div>
 
-        <!-- スライド2: 課題設定と分析目的 -->
         <div class="slide">
             <h2>🎯 課題設定と分析目的</h2>
             
@@ -484,7 +478,6 @@
             </ul>
         </div>
 
-<!-- スライド3: 主要分析結果 -->
 <div class="slide">
     <h2>📈 主要分析結果</h2>
     
@@ -529,7 +522,7 @@
     <div class="insight-box">
         <h3>🔍 重要インサイト</h3>
         <h4>モデル精度</h4>
-        <p>XGBoost + Optuna最適化により <strong>R²=0.9089</strong> を達成 → 高精度な予測が可能。</p>
+        [cite_start]<p>XGBoost + Optuna最適化により <strong>R²=0.9238</strong> を達成 [cite: 1] → 高精度な予測が可能。</p>
 
         <h4>実務への示唆</h4>
         <ul>
@@ -542,7 +535,6 @@
 </div>
 
 
-        <!-- スライド4: 営業戦略最適化提案 -->
         <div class="slide">
             <h2>🎯 営業改善の提案</h2>
 
@@ -588,16 +580,14 @@
             </div>
         </div>
 
-        <!-- スライド5: まとめ -->
-       <!-- スライド5: まとめ -->
-<div class="slide">
+        <div class="slide">
     <h2>📝 分析のまとめ</h2>
 
     <div class="highlight-box">
         <h3>🔍 今回の分析で分かったこと</h3>
         
-        <h4>1. 通話数が最重要</h4>
-        <p>通話数は獲得数に最も強く影響し、特徴量重要度でも49%を占めた。</p>
+        <h4>1. 通話数とCMの組み合わせが最重要</h4>
+        [cite_start]<p>通話数とCMの組み合わせが獲得数に最も強く影響し、特徴量重要度でも49.4%を占めた [cite: 1]。</p>
         
         <h4>2. 曜日・祝日の影響</h4>
         <p>火曜〜木曜が最も効果的。祝日や週末は効率が悪いため戦略的調整が必要。</p>
@@ -609,7 +599,7 @@
     <div class="insight-box">
         <h3>💭 今回の学び</h3>
         <p>EDAに加え、XGBoost + Optuna最適化による機械学習モデルを構築し、
-           SHAPを使った解釈性分析により「なぜこの予測が出たか」を説明できるようになった。</p>
+            SHAPを使った解釈性分析により「なぜこの予測が出たか」を説明できるようになった。</p>
         <p>勘ではなくデータに基づく戦略設計の重要性を実感。</p>
     </div>
 
@@ -633,62 +623,62 @@
 </div>
 
 
-    <div class="controls">
-        <button class="btn" onclick="previousSlide()">← 前へ</button>
-        <button class="btn" onclick="nextSlide()">次へ →</button>
-    </div>
+        <div class="controls">
+            <button class="btn" onclick="previousSlide()">← 前へ</button>
+            <button class="btn" onclick="nextSlide()">次へ →</button>
+        </div>
 
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        
-        document.getElementById('total-slides').textContent = totalSlides;
+        <script>
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+            
+            document.getElementById('total-slides').textContent = totalSlides;
 
-        function showSlide(n) {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (n + totalSlides) % totalSlides;
-            slides[currentSlide].classList.add('active');
-            document.getElementById('current-slide').textContent = currentSlide + 1;
-        }
-
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-
-        function previousSlide() {
-            showSlide(currentSlide - 1);
-        }
-
-        // キーボードナビゲーション
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowRight' || e.key === ' ') {
-                nextSlide();
-            } else if (e.key === 'ArrowLeft') {
-                previousSlide();
+            function showSlide(n) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (n + totalSlides) % totalSlides;
+                slides[currentSlide].classList.add('active');
+                document.getElementById('current-slide').textContent = currentSlide + 1;
             }
-        });
 
-        // タッチ/スワイプナビゲーション
-        let touchStartX = 0;
-        let touchEndX = 0;
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
 
-        document.addEventListener('touchstart', function(e) {
-            touchStartX = e.changedTouches[0].screenX;
-        });
+            function previousSlide() {
+                showSlide(currentSlide - 1);
+            }
 
-        document.addEventListener('touchend', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
+            // キーボードナビゲーション
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    previousSlide();
+                }
+            });
+
+            // タッチ/スワイプナビゲーション
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            document.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            document.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
 function handleSwipe() {
-           if (touchEndX < touchStartX - 50) {
-               nextSlide();
-           }
-           if (touchEndX > touchStartX + 50) {
-               previousSlide();
-           }
-       }
-   </script>
+    if (touchEndX < touchStartX - 50) {
+        nextSlide();
+    }
+    if (touchEndX > touchStartX + 50) {
+        previousSlide();
+    }
+}
+        </script>
 </body>
 </html>
